@@ -1,6 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
 using DI2P1G6.Booking.DataModel;
 using DI2P1G6.Booking.Repository.Contract;
+using System.Reflection.PortableExecutable;
+using System.Data;
 
 namespace DI2P1G6.Booking.Repository
 {
@@ -57,5 +59,43 @@ namespace DI2P1G6.Booking.Repository
             return ressources;
         }
 
+
+        public List<Ressourse> GetAll()
+        {
+            var ressources = new List<Ressourse>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                var query = @"
+                SELECT *
+                FROM Ressources";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ressources.Add(new Ressourse
+                            {
+                                RessourceId = reader.GetInt32(0),
+                                Nom = reader.GetString(1),
+                                Capacite = reader.GetInt32(2),
+                                Image = reader.GetString(3),
+                                SiteId = reader.GetInt32(4),
+                                TypeId = reader.GetInt32(5)
+                            });
+                        }
+                    }
+                }
+            }
+
+            return ressources;
+        }
+
     }
+
+
+
 }

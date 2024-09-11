@@ -10,6 +10,9 @@ namespace DI2P1G6.Booking.Repository.Contract
     public interface IRessourcesRepository
     {
         List<Ressourse> GetAvailableRessources(int? siteId, int? capacite, DateTime? date, TimeSpan? heureDebut, TimeSpan? heureFin);
-        
+
+        List<Ressourse> GetAll();
+
+
     }
 }

@@ -10,5 +10,10 @@ namespace DI2P1G6.Booking.Service
         {
             return ressourcesRepository.GetAvailableRessources(siteId, capacite, date, heureDebut, heureFin);
         }
+
+        public List<Ressourse> GetAll()
+        {
+            return ressourcesRepository.GetAll();
+        }
     }
 }

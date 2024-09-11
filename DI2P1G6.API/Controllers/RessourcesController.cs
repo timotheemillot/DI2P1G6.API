@@ -1,4 +1,5 @@
-﻿using DI2P1G6.Booking.Service.Contract;
+﻿using DI2P1G6.Booking.DataModel;
+using DI2P1G6.Booking.Service.Contract;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.Design;
@@ -24,5 +25,12 @@ namespace DI2P1G6.API.Controllers
             var ressources = ressourcesService.SearchAvailableRessources(siteId, capacite, date, heureDebut, heureFin);
             return Ok(ressources);
         }
+        [HttpGet("all")]
+        public List<Ressourse> GetAll()
+        {
+            var ressources = ressourcesService.GetAll();
+            return ressources;
+        }
+
     }
 }
