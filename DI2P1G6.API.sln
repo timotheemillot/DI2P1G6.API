@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI2P1G6.API", "DI2P1G6.API\DI2P1G6.API.csproj", "{BC9E419C-5993-4BF2-A817-0DC37CAE15F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI2P1G6.API", "DI2P1G6.API\DI2P1G6.API.csproj", "{BC9E419C-5993-4BF2-A817-0DC37CAE15F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI2P1G6.Booking.Repository", "DI2P1G6.Booking.Repository\DI2P1G6.Booking.Repository.csproj", "{50A9055D-C411-44B4-A59B-AA45F16C1E6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI2P1G6.Booking.Repository.Contract", "DI2P1G6.Booking.Repository.Contrat\DI2P1G6.Booking.Repository.Contract.csproj", "{C2B5E6C0-8C98-42BD-B4F6-EDB539366B05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI2P1G6.Booking.Service", "DI2P1G6.Booking.Service\DI2P1G6.Booking.Service.csproj", "{50E1387F-B3A6-4A45-B0EF-EC86DB755E99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI2P1G6.Booking.Service.Contract", "DI2P1G6.Booking.Service.Contract\DI2P1G6.Booking.Service.Contract.csproj", "{8779E97F-1EB4-4D4C-BF3E-82C9C6372AB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{BC9E419C-5993-4BF2-A817-0DC37CAE15F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC9E419C-5993-4BF2-A817-0DC37CAE15F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC9E419C-5993-4BF2-A817-0DC37CAE15F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50A9055D-C411-44B4-A59B-AA45F16C1E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A9055D-C411-44B4-A59B-AA45F16C1E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A9055D-C411-44B4-A59B-AA45F16C1E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A9055D-C411-44B4-A59B-AA45F16C1E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2B5E6C0-8C98-42BD-B4F6-EDB539366B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B5E6C0-8C98-42BD-B4F6-EDB539366B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B5E6C0-8C98-42BD-B4F6-EDB539366B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B5E6C0-8C98-42BD-B4F6-EDB539366B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E1387F-B3A6-4A45-B0EF-EC86DB755E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E1387F-B3A6-4A45-B0EF-EC86DB755E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E1387F-B3A6-4A45-B0EF-EC86DB755E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E1387F-B3A6-4A45-B0EF-EC86DB755E99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8779E97F-1EB4-4D4C-BF3E-82C9C6372AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8779E97F-1EB4-4D4C-BF3E-82C9C6372AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8779E97F-1EB4-4D4C-BF3E-82C9C6372AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8779E97F-1EB4-4D4C-BF3E-82C9C6372AB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
