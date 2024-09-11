@@ -13,7 +13,6 @@ namespace DI2P1G6.Booking.DataModel
         public TimeOnly HeureDebut { get; set; }
         public TimeOnly HeureFin { get; set; }
         public int EspaceId { get; set; }
-        public int TypeId { get; set; }
     }
 }
 }
