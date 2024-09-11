@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DI2P1G6.Booking.DataModel\DI2P1G6.Booking.DataModel.csproj" />
+    <ProjectReference Include="..\DI2P1G6.Booking.Repository.Contrat\DI2P1G6.Booking.Repository.Contract.csproj" />
+    <ProjectReference Include="..\DI2P1G6.Booking.Service.Contract\DI2P1G6.Booking.Service.Contract.csproj" />
+  </ItemGroup>
+
 </Project>

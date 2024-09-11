@@ -1,12 +1,12 @@
 ﻿namespace DI2P1G6.Booking.DataModel
 {
-    public class Ressourses
+    public class Ressourse
     {
-        public int EspaceId { get; set; }
+        public int RessourceId { get; set; }
 
         public string Nom { get; set; }
 
-        public int Places { get; set; }
+        public int Capacite { get; set; }
 
         public string Image { get; set; }
 

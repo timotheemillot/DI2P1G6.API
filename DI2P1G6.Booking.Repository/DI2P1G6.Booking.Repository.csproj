@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DI2P1G6.Booking.DataModel\DI2P1G6.Booking.DataModel.csproj" />
+    <ProjectReference Include="..\DI2P1G6.Booking.Repository.Contrat\DI2P1G6.Booking.Repository.Contract.csproj" />
+  </ItemGroup>
+
 </Project>
