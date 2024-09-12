@@ -1,9 +1,6 @@
 ﻿using DI2P1G6.Booking.DataModel;
-using DI2P1G6.Booking.Service;
 using DI2P1G6.Booking.Service.Contract;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.Design;
 
 namespace DI2P1G6.API.Controllers
 {
@@ -12,20 +9,27 @@ namespace DI2P1G6.API.Controllers
     public class RessourcesController(IRessourcesService ressourcesService) : ControllerBase
     {
         /// <summary>
-        /// api/ressources/search
+        /// Recherche des ressources disponibles en fonction des critères de site, capacité, date et plage horaire.
+        /// GET: api/ressources/search
         /// </summary>
-        /// <param name="siteId"></param>
-        /// <param name="capacite"></param>
-        /// <param name="date"></param>
-        /// <param name="heureDebut"></param>
-        /// <param name="heureFin"></param>
-        /// <returns></returns>
+        /// <param name="siteId">L'ID du site où chercher des ressources.</param>
+        /// <param name="capacite">La capacité de la ressource souhaitée.</param>
+        /// <param name="date">La date pour laquelle la ressource est nécessaire.</param>
+        /// <param name="heureDebut">Heure de début souhaitée pour la ressource.</param>
+        /// <param name="heureFin">Heure de fin souhaitée pour la ressource.</param>
+        /// <returns>Liste des ressources disponibles correspondant aux critères.</returns>
         [HttpGet("search")]
         public IActionResult SearchRessources([FromQuery] int? siteId, [FromQuery] int? capacite, [FromQuery] DateTime? date, [FromQuery] TimeSpan? heureDebut, [FromQuery] TimeSpan? heureFin)
         {
             var ressources = ressourcesService.SearchAvailableRessources(siteId, capacite, date, heureDebut, heureFin);
             return Ok(ressources);
         }
+
+        /// <summary>
+        /// Récupère toutes les ressources disponibles.
+        /// GET: api/ressources/all
+        /// </summary>
+        /// <returns>Liste de toutes les ressources.</returns>
         [HttpGet("all")]
         public List<Ressourse> GetAll()
         {
@@ -33,6 +37,11 @@ namespace DI2P1G6.API.Controllers
             return ressources;
         }
 
+        /// <summary>
+        /// Récupère tous les sites disponibles.
+        /// GET: api/ressources/Site
+        /// </summary>
+        /// <returns>Liste des sites disponibles.</returns>
         [HttpGet("Site")]
         public List<Site> GetSite()
         {
@@ -40,7 +49,12 @@ namespace DI2P1G6.API.Controllers
             return sites;
         }
 
-        // POST: api/ressources
+        /// <summary>
+        /// Crée une nouvelle ressource.
+        /// POST: api/ressources
+        /// </summary>
+        /// <param name="ressource">L'objet ressource à créer.</param>
+        /// <returns>Message indiquant si la création a réussi ou échoué.</returns>
         [HttpPost]
         public IActionResult CreateRessource([FromBody] Ressourse ressource)
         {
@@ -59,6 +73,5 @@ namespace DI2P1G6.API.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-
     }
 }
