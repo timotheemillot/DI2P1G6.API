@@ -1,4 +1,5 @@
 ﻿using DI2P1G6.Booking.DataModel;
+using DI2P1G6.Booking.Service;
 using DI2P1G6.Booking.Service.Contract;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,26 @@ namespace DI2P1G6.API.Controllers
         {
             var ressources = ressourcesService.GetAll();
             return ressources;
+        }
+
+        // POST: api/ressources
+        [HttpPost]
+        public IActionResult CreateRessource([FromBody] Ressourse ressource)
+        {
+            if (ressource == null)
+            {
+                return BadRequest("Ressource is null.");
+            }
+
+            try
+            {
+                ressourcesService.CreateRessource(ressource);
+                return Ok("Ressource created successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
     }

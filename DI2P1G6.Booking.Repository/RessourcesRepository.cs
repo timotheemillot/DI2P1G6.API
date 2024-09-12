@@ -94,6 +94,28 @@ namespace DI2P1G6.Booking.Repository
             return ressources;
         }
 
+        public void CreateRessource(Ressourse ressource)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                var query = @"INSERT INTO Ressources (Nom, Capacite, Image, SiteId, TypeId) 
+                      VALUES (@Nom, @Capacite, @Image, @SiteId, @TypeId)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nom", ressource.Nom);
+                    command.Parameters.AddWithValue("@Capacite", ressource.Capacite);
+                    command.Parameters.AddWithValue("@Image", ressource.Image);
+                    command.Parameters.AddWithValue("@SiteId", ressource.SiteId);
+                    command.Parameters.AddWithValue("@TypeId", ressource.TypeId);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
     }
 
 

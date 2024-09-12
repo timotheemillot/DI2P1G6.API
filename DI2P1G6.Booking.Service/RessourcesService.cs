@@ -15,5 +15,10 @@ namespace DI2P1G6.Booking.Service
         {
             return ressourcesRepository.GetAll();
         }
+        public void CreateRessource(Ressourse ressource)
+        {
+            ressourcesRepository.CreateRessource(ressource);
+        }
+
     }
 }
