@@ -33,6 +33,13 @@ namespace DI2P1G6.API.Controllers
             return ressources;
         }
 
+        [HttpGet("Site")]
+        public List<Site> GetSite()
+        {
+            var sites = ressourcesService.GetSite();
+            return sites;
+        }
+
         // POST: api/ressources
         [HttpPost]
         public IActionResult CreateRessource([FromBody] Ressourse ressource)

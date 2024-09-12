@@ -12,6 +12,7 @@ namespace DI2P1G6.Booking.Repository.Contract
         List<Ressourse> GetAvailableRessources(int? siteId, int? capacite, DateTime? date, TimeSpan? heureDebut, TimeSpan? heureFin);
 
         List<Ressourse> GetAll();
+        List<Site> GetSite();
 
         void CreateRessource(Ressourse ressource);
 
