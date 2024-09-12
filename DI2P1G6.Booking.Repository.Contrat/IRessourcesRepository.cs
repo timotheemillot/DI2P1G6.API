@@ -13,6 +13,8 @@ namespace DI2P1G6.Booking.Repository.Contract
 
         List<Ressourse> GetAll();
 
+        void CreateRessource(Ressourse ressource);
+
 
     }
 }
