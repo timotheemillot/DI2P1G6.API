@@ -30,7 +30,7 @@ namespace DI2P1G6.API.Controllers
         /// GET: api/ressources/all
         /// </summary>
         /// <returns>Liste de toutes les ressources.</returns>
-        [HttpGet("all")]
+        [HttpGet("")]
         public List<Ressourse> GetAll()
         {
             var ressources = ressourcesService.GetAll();

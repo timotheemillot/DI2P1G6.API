@@ -103,7 +103,7 @@ namespace DI2P1G6.Booking.Repository
                 connection.Open();
                 var query = @"
                 SELECT *
-                FROM Site";
+                FROM Sites";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -115,8 +115,8 @@ namespace DI2P1G6.Booking.Repository
                             {
                                SiteId = reader.GetInt32(0),
                                Nom = reader.GetString(1),
-                                Adresse = reader.GetString(3),
-                                Ville = reader.GetString(4),
+                                Adresse = reader.GetString(2),
+                                Ville = reader.GetString(3),
                             });
                         }
                     }
