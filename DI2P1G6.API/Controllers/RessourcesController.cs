@@ -37,17 +37,6 @@ namespace DI2P1G6.API.Controllers
             return ressources;
         }
 
-        /// <summary>
-        /// Récupère tous les sites disponibles.
-        /// GET: api/ressources/Site
-        /// </summary>
-        /// <returns>Liste des sites disponibles.</returns>
-        [HttpGet("Site")]
-        public List<Site> GetSite()
-        {
-            var sites = ressourcesService.GetSite();
-            return sites;
-        }
 
         /// <summary>
         /// Crée une nouvelle ressource.

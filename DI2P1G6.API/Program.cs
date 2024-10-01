@@ -16,7 +16,21 @@ builder.Services.AddScoped<IRessourcesRepository>(provider =>
     return new RessourcesRepository(connectionString);
 });
 
+builder.Services.AddScoped<ISitesRepository>(provider =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("BookingConnectionstring");
+    return new SitesRepository(connectionString);
+});
+
+builder.Services.AddScoped<ITypesRepository>(provider =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("BookingConnectionstring");
+    return new TypesRepository(connectionString);
+});
+
 builder.Services.AddScoped<IRessourcesService, RessourcesService>();
+builder.Services.AddScoped<ISitesService, SitesService>();
+builder.Services.AddScoped<ITypesService, TypesService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
