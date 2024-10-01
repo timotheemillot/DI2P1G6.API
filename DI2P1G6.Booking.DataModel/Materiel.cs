@@ -12,6 +12,7 @@ namespace DI2P1G6.Booking.DataModel
 
         public string Nom { get; set; }
 
+
         public int EspaceId { get; set; }
     }
 }
