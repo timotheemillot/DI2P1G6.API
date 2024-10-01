@@ -31,7 +31,7 @@ namespace DI2P1G6.API.Controllers
         /// </summary>
         /// <returns>Liste de toutes les ressources.</returns>
         [HttpGet("")]
-        public List<Ressourse> GetAll()
+        public List<Ressource> GetAll()
         {
             var ressources = ressourcesService.GetAll();
             return ressources;
@@ -45,7 +45,7 @@ namespace DI2P1G6.API.Controllers
         /// <param name="ressource">L'objet ressource à créer.</param>
         /// <returns>Message indiquant si la création a réussi ou échoué.</returns>
         [HttpPost]
-        public IActionResult CreateRessource([FromBody] Ressourse ressource)
+        public IActionResult CreateRessource([FromBody] Ressource ressource)
         {
             if (ressource == null)
             {

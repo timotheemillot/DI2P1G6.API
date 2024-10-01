@@ -9,10 +9,10 @@ namespace DI2P1G6.Booking.Service.Contract
 {
     public interface IRessourcesService
     {
-        List<Ressourse> SearchAvailableRessources(int? siteId, int? capacite, DateTime? date, TimeSpan? heureDebut, TimeSpan? heureFin);
+        List<Ressource> SearchAvailableRessources(int? siteId, int? capacite, DateTime? date, TimeSpan? heureDebut, TimeSpan? heureFin);
 
-        List<Ressourse> GetAll();
-        void CreateRessource(Ressourse ressourse);
+        List<Ressource> GetAll();
+        void CreateRessource(Ressource ressourse);
 
 
     }

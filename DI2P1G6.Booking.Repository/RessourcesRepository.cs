@@ -8,9 +8,9 @@ namespace DI2P1G6.Booking.Repository
 {
     public class RessourcesRepository(string connectionString) : IRessourcesRepository
     {
-        public List<Ressourse> GetAvailableRessources(int? siteId, int? capacite, DateTime? date, TimeSpan? heureDebut, TimeSpan? heureFin)
+        public List<Ressource> GetAvailableRessources(int? siteId, int? capacite, DateTime? date, TimeSpan? heureDebut, TimeSpan? heureFin)
         {
-            var ressources = new List<Ressourse>();
+            var ressources = new List<Ressource>();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -42,7 +42,7 @@ namespace DI2P1G6.Booking.Repository
                     {
                         while (reader.Read())
                         {
-                            ressources.Add(new Ressourse
+                            ressources.Add(new Ressource
                             {
                                 RessourceId = reader.GetInt32(0),
                                 Nom = reader.GetString(1),
@@ -60,9 +60,9 @@ namespace DI2P1G6.Booking.Repository
         }
 
 
-        public List<Ressourse> GetAll()
+        public List<Ressource> GetAll()
         {
-            var ressources = new List<Ressourse>();
+            var ressources = new List<Ressource>();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -77,7 +77,7 @@ namespace DI2P1G6.Booking.Repository
                     {
                         while (reader.Read())
                         {
-                            ressources.Add(new Ressourse
+                            ressources.Add(new Ressource
                             {
                                 RessourceId = reader.GetInt32(0),
                                 Nom = reader.GetString(1),
@@ -95,7 +95,7 @@ namespace DI2P1G6.Booking.Repository
         }
 
 
-        public void CreateRessource(Ressourse ressource)
+        public void CreateRessource(Ressource ressource)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

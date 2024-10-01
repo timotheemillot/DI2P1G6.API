@@ -1,6 +1,6 @@
 ﻿namespace DI2P1G6.Booking.DataModel
 {
-    public class Ressourse
+    public class Ressource
     {
         public int RessourceId { get; set; }
 
